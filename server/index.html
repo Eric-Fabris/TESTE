@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TESTE</title>
+    
+
+</head>
+<body>
+
+    <div class="button">
+
+    <button onclick="button()">Enviar</button>
+
+    </div>
+    
+    <script>
+
+        function button(){
+            fetch('http://localhost:3001/')
+
+            .then(function(response) {
+                return response.text();
+            })
+    
+            .then(function(response) {
+                console.log(response);
+            })
+            
+            .catch(function(error) {
+                console.log('There has been a problem with your fetch operation: ' + error.message);
+            });
+            
+        }
+        
+
+        
+
+    </script>
+
+</body>
+<style>
+    .button{
+        border-radius: 15px;
+        cursor: pointer;
+        padding: 50px;
+        background-color: blue;
+        background-image: radial-gradient(blue 20%, black 20%);
+        font-family: sans-serif;
+        font-size: 25px;
+        text-shadow: 3px 3px red;
+        display: flex;
+        justify-content: center;
+    }
+
+    
+</style>
+</html>
+
